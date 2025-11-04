@@ -5,30 +5,35 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Amazon Ember', Arial, sans-serif;
     background-color: #f8f8f8;
     color: #333;
 }
 
-h1 {
-    color: white;
-    
+
+.logo {
+  height: 120px;  
+  width: auto;  
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar {
     display: flex;
     justify-content: center;   
     align-items: center;
-    background: linear-gradient(135deg, #ff9900, #333);
-    padding: 50px 30px; 
+     background: linear-gradient(135deg, #333, #ff9900);
+    padding: 0px 20px; 
     gap: 100px;
 }
 
 
+
 .navlinks {
-    font-size: 20px;
+    font-size: 15px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     color: white;
     padding: 0px 10px 0px;
     margin-right: 20px;
@@ -41,7 +46,7 @@ h1 {
 
 }
 
-a:hover {
+.navlinks a:hover {
     color:#ff9900 ;
 }
 
@@ -68,14 +73,13 @@ a:hover {
 }
 
 .cart a {
-  color:#ff9900;
   font-size: 28px;
   cursor: pointer;
   
 }
 
 .cart .material-symbols-outlined {
-    font-size: 32px; 
+    font-size: 35px; 
 }
 
 .search-btn {
@@ -106,20 +110,58 @@ a:hover {
   transition: transform 1s ease-in-out;
   margin: 0;
   padding: 0;
-  width: auto; /* let flex handle the total width */
+  width: auto; 
 }
 
 
 .carousel-inner img {
-  flex: 0 0 100%; /* take full width of container */
+  flex: 0 0 100%; 
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* ensures image fills container fully */
+  object-fit: cover;   
   object-position: center;
-  margin: 0;           /* remove any default margin */
-  display: block;      /* remove inline-block gaps */
+  margin: 0;        
+  display: block;    
 }
 
 
+/* CATEGORIES CARD */
 
-  
+.categories {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f8f8f8;
+}
+
+.categories h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 200px)); 
+  gap: 20px; 
+  justify-content: center; 
+  padding: 0 20px; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+.category-link {
+  color: black;
+}
+
+.category-card {
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.category-card:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}

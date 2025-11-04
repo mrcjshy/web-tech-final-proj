@@ -67,9 +67,7 @@ a:hover {
     border: none;
 }
 
-
-
-.cart {
+.cart a {
   color:#ff9900;
   font-size: 28px;
   cursor: pointer;
@@ -104,12 +102,13 @@ a:hover {
 
 .carousel-inner {
   display: flex;
-  width: 300%; 
   height: 100%;
   transition: transform 1s ease-in-out;
   margin: 0;
   padding: 0;
+  width: auto; /* let flex handle the total width */
 }
+
 
 .carousel-inner img {
   flex: 0 0 100%; /* take full width of container */

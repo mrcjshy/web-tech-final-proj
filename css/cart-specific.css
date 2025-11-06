@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* HEADER */
+.logo {
+  height: 120px;  
+  width: auto;  
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #333, #ff9900);
+    padding: 0px 40px; 
+}
+
+.navbar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.navlinks {
+    font-size: 15px;
+    display: flex;
+    gap: 20px;
+    color: white;
+    padding: 0px 10px 0px;
+    margin-right: 20px;
+}
+
+.navlinks, a {
+    color: white;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+.navlinks a:hover {
+    color:#ff9900 ;
+}
+
+/* PRODUCT INDICATION */
+.selectall {
+   background-color: #333;
+   padding: 10px 10px;
+   margin-top: 10px;
+   display: flex;
+   align-items: center;
+}
+
+.select-label {
+    color: white;
+}
+
+.product-indication {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex: 1;
+}
+
+.product-indication p {
+    color: white;
+}
+

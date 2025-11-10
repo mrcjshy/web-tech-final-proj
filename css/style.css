@@ -98,12 +98,19 @@ body {
 }
 
 /* CAROUSEL */
+
+.main-content {
+  display: flex;
+  align-items: center;
+  margin-right: 70px;
+}
+
 .carousel {
   display: flex;
   width: 100%;
   max-width: 900px;
   height: 300px; 
-  margin: 70px auto;
+  margin: 70px 0 70px 70px;
   overflow: hidden;
   position: relative;
 }
@@ -128,6 +135,13 @@ body {
   display: block;    
 }
 
+
+.side-banners img {
+  width: 450px;
+  display: block;
+  margin: 0; 
+  padding: 0;
+}
 
 /* CATEGORIES CARD */
 

@@ -103,6 +103,7 @@ body {
   display: flex;
   align-items: center;
   margin-right: 70px;
+  gap: 5px;
 }
 
 .carousel {

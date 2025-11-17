@@ -53,12 +53,17 @@
     padding-bottom: 40px;
 }
 
+.team-member p {
+    text-align: center;
+}
+
+
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
+
 
 .team-member {
     text-align: center;
@@ -67,6 +72,8 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 15px;
+    width: 300px; 
 }
 
 .team-member:hover {

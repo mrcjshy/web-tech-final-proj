@@ -11,8 +11,8 @@
 .product-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center items for a cleaner look */
-  gap: 20px; /* Add gap for spacing */
+  justify-content: center; 
+  gap: 20px; 
   padding: 20px;
 }
 
@@ -23,7 +23,7 @@
     cursor: pointer;
     transition: transform 0.4s ease, box-shadow 0.5s ease;
     background-color: #fff;
-    width: 250px; /* Give a fixed width */
+    width: 250px; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderCart() {
 
-    // Remove existing cart items
+    // REMOVE EXISTING CART ITEMS
 
     const existingCartItems = document.querySelectorAll('.cart-item');
 

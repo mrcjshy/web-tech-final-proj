@@ -1,6 +1,8 @@
-// Using event delegation for a more robust and performant solution
+// USING EVENT DELEGATION FOR A MORE ROBUST AND PERFORMANT SOLUTION
+const LOGGED_IN_KEY = "tm_logged_in_user";
+
 document.addEventListener('click', function(event) {
-    // Check if the clicked element is an 'add-to-cart' button
+    // CHECK IF THE CLICKED ELEMENT IS AN ADD TO CART BUTTON
     if (event.target.classList.contains('add-to-cart')) {
         const productCard = event.target.closest('.product-card');
         if (productCard) {
@@ -9,7 +11,26 @@ document.addEventListener('click', function(event) {
     }
 });
 
+function isUserLoggedIn() {
+    const loggedInUser = localStorage.getItem(LOGGED_IN_KEY);
+    if (!loggedInUser) {
+        return false;
+    }
+    try {
+        const user = JSON.parse(loggedInUser);
+        return user && (user.username || user.email);
+    } catch (error) {
+        return false;
+    }
+}
+
 function handleAddToCart(productCard) {
+    // CHECK IF USER IS LOGGED IN
+    if (!isUserLoggedIn()) {
+        window.location.href = "login.html";
+        return;
+    }
+
     const productId = productCard.dataset.id;
     const productName = productCard.dataset.name;
     const productPrice = productCard.dataset.price;

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/index.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 <link href="https://fonts.cdnfonts.com/css/amazon-ember" rel="stylesheet">
  <link rel="icon" href="css/images/tech-mart-logo.png">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
                
 
 
@@ -29,7 +30,7 @@ search
 </span>
   </button>
 </form>
-<div class="cart">
+<div class="cart" id="cart-element">
 <a href="cart.html">
 <span class="material-symbols-outlined">
 add_shopping_cart
@@ -42,6 +43,10 @@ add_shopping_cart
     <li><a href="products.html">Products</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="Help.html">Help</a></li>
+    <li><a href="login.html" id="login-button"><i class="fas fa-user"></i> Login</a></li>
+    <li><a href="register.html" id="register-button"><i class="fas fa-user-plus"></i> Register</a></li>
+    <li><a href="#" id="logout-button" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    <li><a href="#" id="user-name" style="display: none;"></a></li>
   </ul>
 
 </nav>  
@@ -145,7 +150,7 @@ add_shopping_cart
     <button class="add-to-cart">Add to Cart</button>
 </div>
 
-<!-- FIXED: removed incorrect filename (underscore) -->
+
 <div class="product-card" data-id="5" data-name="Computer Case" data-price="1899" data-img="images/home-items/item-computer-case_.jpg">
     <img src="images/home-items/item-computer-case_.jpg" alt="Computer Case">
     <h3>Computer Case</h3>
@@ -153,7 +158,7 @@ add_shopping_cart
     <button class="add-to-cart">Add to Cart</button>
 </div>
 
-<!-- FIXED: removed spaces and typo -->
+
 <div class="product-card" data-id="6" data-name="Cooling Fan" data-price="799" data-img="images/home-items/item-cooling-fan-cpu-cooler.jpg">
     <img src="images/home-items/item-cooling-fan-cpu-cooler.jpg" alt="Cooling Fan / CPU Cooler">
     <h3>Cooling Fan</h3>
@@ -205,7 +210,6 @@ add_shopping_cart
     <button class="add-to-cart">Add to Cart</button>
 </div>
 
-<!-- FIXED -->
 <div class="product-card" data-id="13" data-name="Gamepad Controller" data-price="1199" data-img="images/home-items/item-gamepad.jpg">
     <img src="images/home-items/item-gamepad_.jpg" alt="Gamepad Controller">
     <h3>Gamepad Controller</h3>
@@ -220,7 +224,6 @@ add_shopping_cart
     <button class="add-to-cart">Add to Cart</button>
 </div>
 
-<!-- FIXED -->
 <div class="product-card" data-id="15" data-name="HDMI Cable" data-price="249" data-img="images/home-items/item-hdmi-cable.jpg">
     <img src="images/home-items/item-hdmi-cable_.jpg" alt="HDMI Cable">
     <h3>HDMI Cable</h3>
@@ -235,7 +238,7 @@ add_shopping_cart
     <button class="add-to-cart">Add to Cart</button>
 </div>
 
-<!-- FIXED -->
+
 <div class="product-card" data-id="17" data-name="Microphone" data-price="1399" data-img="images/home-items/item-microphone.jpg">
     <img src="images/home-items/item-microphone_.jpg" alt="Microphone">
     <h3>Microphone</h3>
@@ -250,7 +253,6 @@ add_shopping_cart
     <button class="add-to-cart">Add to Cart</button>
 </div>
 
-<!-- FIXED -->
 <div class="product-card" data-id="19" data-name="Mouse Pad" data-price="299" data-img="images/home-items/item-mouse-pad.jpg">
     <img src="images/home-items/item-mouse-pad_.jpg" alt="Mouse Pad">
     <h3>Mouse Pad</h3>
@@ -279,7 +281,6 @@ add_shopping_cart
     <button class="add-to-cart">Add to Cart</button>
 </div>
 
-<!-- FIXED -->
 <div class="product-card" data-id="23" data-name="Power Supply" data-price="2299" data-img="images/home-items/item-power-supply.jpg">
     <img src="images/home-items/item-power-supply_.jpg" alt="Power Supply">
     <h3>Power Supply</h3>
@@ -301,7 +302,6 @@ add_shopping_cart
     <button class="add-to-cart">Add to Cart</button>
 </div>
 
-<!-- FIXED -->
 <div class="product-card" data-id="26" data-name="Screen Protector" data-price="199" data-img="images/home-items/item-screen-protector.jpg">
     <img src="images/home-items/item-screen-protector_.jpg" alt="Screen Protector">
     <h3>Screen Protector</h3>
@@ -344,7 +344,6 @@ add_shopping_cart
     <button class="add-to-cart">Add to Cart</button>
 </div>
 
-<!-- FIXED -->
 <div class="product-card" data-id="32" data-name="USB Flash Drive" data-price="499" data-img="images/home-items/item-usb-flash-drive.jpg">
     <img src="images/home-items/item-usb-flash-drive_.jpg" alt="USB Flash Drive">
     <h3>USB Flash Drive</h3>
@@ -387,7 +386,6 @@ add_shopping_cart
     <button class="add-to-cart">Add to Cart</button>
 </div>
 
-<!-- FIXED -->
 <div class="product-card" data-id="38" data-name="External Hard Drive" data-price="2999" data-img="images/home-items/item-external-hard-drive.jpg">
     <img src="images/home-items/item-external-hard-drive_.jpg" alt="External Hard Drive">
     <h3>External Hard Drive</h3>
@@ -395,7 +393,6 @@ add_shopping_cart
     <button class="add-to-cart">Add to Cart</button>
 </div>
 
-<!-- FIXED -->
 <div class="product-card" data-id="39" data-name="Phone Case" data-price="199" data-img="images/home-items/item-phone-case.jpg">
     <img src="images/home-items/item-phone-case_.jpg" alt="Phone Case">
     <h3>Phone Case</h3>
@@ -415,7 +412,35 @@ add_shopping_cart
 
 <!-- FOOTER -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Get to Know Us</h3>
+      <ul>
+        <li><a href="/about.html">About Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Customer Service</h3>
+      <ul>
+        <li><a href="/help.html">Help Center</a></li>
+        <li><a href="/cart.html">Your Cart</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Connect with Us</h3>
+      <ul class="social-links">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 TechMart. All Rights Reserved.</p>
+  </div>
+</footer>
+<script src="js/common.js"></script>
 <script src="js/carousel.js"></script>
 <script src="js/products.js"></script>
 <script src="js/search.js"></script>

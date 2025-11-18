@@ -3,18 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.querySelector('.search-input');
 
     if (searchForm && searchInput) {
-        // Create suggestions container dynamically
+        // CREATE SUGGESTIONS CONTAINER DYNAMICALLY
         const suggestionsContainer = document.createElement('div');
         suggestionsContainer.classList.add('search-suggestions');
-        // Insert it after the search input, not at the end of the form
+        // INSERT IT AFTER THE SEARCH INPUT, NOT AT THE END OF THE FORM
         searchInput.parentNode.insertBefore(suggestionsContainer, searchInput.nextSibling);
 
-        // --- 1. Autocomplete Suggestions ---
+        // MY SEARCH AUTOCOMPLETE SUGGESTIONS
         searchInput.addEventListener('input', () => {
             const query = searchInput.value.toLowerCase().trim();
             suggestionsContainer.innerHTML = '';
 
-            if (query.length < 2) { // Only show suggestions for 2 or more characters
+            // SUGGEST FOR 2 OR MORE CHARACTERS ONLY
+            if (query.length < 2) { 
                 suggestionsContainer.style.display = 'none';
                 return;
             }
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             );
 
             if (filteredProducts.length > 0) {
-                // Create a list of suggestion items
+                // CREATE A LIST OF SUGGESTION ITEMS
                 const suggestionsHTML = filteredProducts.slice(0, 5).map(product => 
                     `<a href="products.html?q=${encodeURIComponent(product.name)}" class="suggestion-item">${product.name}</a>`
                 ).join('');
@@ -37,19 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // --- Hide suggestions when clicking outside the search form ---
+        // HIDE SUGGESTION WHEN CLICKING OUTSIDE OF THE SEARCH FORM
         document.addEventListener('click', (e) => {
             if (!searchForm.contains(e.target)) {
                 suggestionsContainer.style.display = 'none';
             }
         });
 
-        // --- 2. Search Form Submission ---
+        // SEARCH FORM SUBMISSION
         searchForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const query = searchInput.value.trim();
             if (query) {
-                // Redirect to the products page with the search query
+                // REDIRECT TO THE PRODUCTS PAGE WITH THE SEARCH QUERY
                 window.location.href = `products.html?q=${encodeURIComponent(query)}`;
             }
         });

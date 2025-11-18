@@ -10,7 +10,7 @@ function renderProducts(productsToRender, containerElement) {
         productHTML = "<p>No products found matching your criteria.</p>";
     } else {
         productsToRender.forEach(product => {
-            // Ensure price is a number before calling toLocaleString
+            // ENSURE PRICE IS A NUMBER BEFORE CALLING toLocalString
             const price = typeof product.price === 'number' ? product.price : parseFloat(product.price);
 
             productHTML += `

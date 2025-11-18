@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home · Tech Mart</title>
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+  <main class="auth-card home-card" aria-live="polite">
+    <h1 id="welcomeTitle">Hi there!</h1>
+    <p class="welcome" id="welcomeMessage">Loading your account…</p>
+    <button id="logoutBtn">Log out</button>
+  </main>
+
+  <script>
+    const LOGGED_IN_KEY = "tm_logged_in_user";
+
+    var title = document.getElementById("welcomeTitle");
+    var message = document.getElementById("welcomeMessage");
+    var logoutBtn = document.getElementById("logoutBtn");
+
+    function getLoggedInUser() {
+      var storedUser = localStorage.getItem(LOGGED_IN_KEY);
+      if (!storedUser) {
+        return null;
+      }
+
+      try {
+        return JSON.parse(storedUser);
+      } catch (error) {
+        return null;
+      }
+    }
+
+    var user = getLoggedInUser();
+
+    if (!user) {
+      window.location.replace("login.html");
+    } else {
+      var displayName = user.username ? user.username : "Tech Mart shopper";
+      title.textContent = "Welcome, " + displayName + "!";
+      message.textContent = "You are signed in as " + user.email + ".";
+    }
+
+    logoutBtn.addEventListener("click", function () {
+      localStorage.removeItem(LOGGED_IN_KEY);
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+
+</html>
+

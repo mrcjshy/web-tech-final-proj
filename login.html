@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login · TechMart</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link href="https://fonts.cdnfonts.com/css/amazon-ember" rel="stylesheet">
+    <link rel="icon" href="css/images/tech-mart-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="auth-page">
+<!-- HEADER -->
+<header class="auth-header">
+    <div class="auth-header-content">
+        <div class="auth-header-left">
+            <img class="auth-logo-small" src="images/logo/tech-mart-logo.png" alt="TechMart">
+            <span class="auth-header-text">TechMart Log In</span>
+        </div>
+        <div class="auth-header-right">
+            <a href="Help.html" class="auth-help-link">Need help?</a>
+        </div>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="auth-main-container">
+    <!-- LEFT SIDE - BRANDING -->
+    <div class="auth-branding">
+        <div class="auth-branding-content">
+            <div class="auth-logo-large">
+                <img src="images/logo/tech-mart-logo.png" alt="TechMart Logo">
+            </div>
+            <h1 class="auth-brand-name">TechMart</h1>
+            <p class="auth-brand-tagline">Your trusted partner in technology and innovation</p>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE - LOGIN FORM -->
+    <div class="auth-form-wrapper">
+        <div class="auth-form-card">
+            <div class="auth-form-header">
+                <h2 class="auth-form-title">Log In</h2>
+            </div>
+
+            <form id="loginForm" novalidate>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" required>
+                </div>
+
+                <div class="form-group">
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password" required>
+                        <span class="password-toggle" id="passwordToggle">
+                            <i class="fas fa-eye" id="toggleIcon"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <button type="submit" class="auth-submit-btn" id="loginSubmitBtn">LOG IN</button>
+                <p id="feedback" class="feedback" role="status"></p>
+            </form>
+
+            <p class="auth-link">
+                New to TechMart?
+                <a href="register.html">Sign Up</a>
+            </p>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Get to Know Us</h3>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Customer Service</h3>
+      <ul>
+        <li><a href="help.html">Help Center</a></li>
+        <li><a href="cart.html">Your Cart</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Connect with Us</h3>
+      <ul class="social-links">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 TechMart. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+// INLINE TEST TO VERIFY FORM EXISTS
+console.log("=== PAGE LOADED ===");
+console.log("Form exists:", !!document.getElementById("loginForm"));
+console.log("Feedback exists:", !!document.getElementById("feedback"));
+</script>
+<script src="js/common.js"></script>
+<script src="js/login.js"></script>
+<script>
+// PASSWORD TOGGLE FOR LOGIN PAGE
+document.addEventListener('DOMContentLoaded', function() {
+    var passwordToggle = document.getElementById("passwordToggle");
+    var passwordInput = document.getElementById("password");
+    var toggleIcon = document.getElementById("toggleIcon");
+    
+    if (passwordToggle && passwordInput && toggleIcon) {
+        passwordToggle.addEventListener("click", function() {
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>

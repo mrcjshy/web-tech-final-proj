@@ -1,4 +1,3 @@
-// CAROUSEL
 const carouselInner = document.querySelector('.carousel-inner');
 let slides = document.querySelectorAll('.carousel-inner .slide');
 let index = 0;

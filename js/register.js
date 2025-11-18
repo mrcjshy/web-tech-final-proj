@@ -1,5 +1,3 @@
-// REGISTER.JS
-
 const USERS_KEY = "tm_users";
 
 // WAIT FOR DOM TO BE FULLY LOADED

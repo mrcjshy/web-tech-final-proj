@@ -1,5 +1,3 @@
-// COMMON.JS
-
 const LOGGED_IN_KEY = "tm_logged_in_user";
 
 document.addEventListener('DOMContentLoaded', function() {

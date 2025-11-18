@@ -1,5 +1,3 @@
-// LOGIN.JS - ULTRA-SIMPLE DIRECT APPROACH
-
 (function() {
     'use strict';
     

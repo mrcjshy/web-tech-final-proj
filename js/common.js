@@ -1,13 +1,11 @@
 const LOGGED_IN_KEY = "tm_logged_in_user";
 
 document.addEventListener('DOMContentLoaded', function() {
-    // SET CURRENT YEAR IN FOOTER
     var currentYearSpan = document.getElementById('current-year');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
 
-    // NAVIGATION TOGGLE FOR MOBILE
     var navToggle = document.querySelector('.nav-toggle');
     var mainNav = document.querySelector('.main-nav ul');
 
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // GET LOGGED-IN USER
     function getLoggedInUser() {
         var storedUser = localStorage.getItem(LOGGED_IN_KEY);
         if (!storedUser) {
@@ -32,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // LOGIN/LOGOUT VISIBILITY AND USER NAME DISPLAY
     var loginButton = document.getElementById('login-button');
     var logoutButton = document.getElementById('logout-button');
     var registerButton = document.getElementById('register-button');

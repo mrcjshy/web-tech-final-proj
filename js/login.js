@@ -56,7 +56,6 @@
             console.log("LOGIN.JS: Email =", email);
             console.log("LOGIN.JS: Password length =", password.length);
 
-            // VALIDATE
             if (!email || !password) {
                 showError("Please enter both email and password.");
                 return false;
@@ -67,7 +66,6 @@
                 return false;
             }
 
-            // GET USERS
             var usersStr = localStorage.getItem(USERS_KEY);
             var users = [];
             if (usersStr) {
@@ -85,7 +83,6 @@
                 return false;
             }
 
-            // FIND MATCH
             var found = false;
             var matchedUser = null;
             for (var i = 0; i < users.length; i++) {
@@ -103,7 +100,6 @@
 
             console.log("LOGIN.JS: Login successful for", matchedUser.username);
 
-            // SAVE SESSION
             localStorage.setItem(LOGGED_IN_KEY, JSON.stringify({
                 username: matchedUser.username,
                 email: matchedUser.email
@@ -111,7 +107,6 @@
 
             showSuccess("Login successful! Redirecting...");
 
-            // REDIRECT
             setTimeout(function() {
                 window.location.href = "index.html";
             }, 1000);
@@ -119,7 +114,6 @@
             return false;
         }
 
-        // ATTACH HANDLERS
         form.addEventListener("submit", handleSubmit);
         if (submitBtn) {
             submitBtn.addEventListener("click", handleSubmit);
@@ -128,7 +122,6 @@
         console.log("LOGIN.JS: Handlers attached successfully!");
     }
 
-    // INITIALIZE WHEN READY
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
         setTimeout(init, 1);
     } else {
@@ -136,6 +129,5 @@
         window.addEventListener('load', init);
     }
 
-    // ALSO TRY IMMEDIATE INIT
     setTimeout(init, 100);
 })();

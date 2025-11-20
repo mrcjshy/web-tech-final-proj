@@ -1,6 +1,5 @@
 const USERS_KEY = "tm_users";
 
-// WAIT FOR DOM TO BE FULLY LOADED
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Register script loaded");
     
@@ -10,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var passwordToggle = document.getElementById("passwordToggle");
     var toggleIcon = document.getElementById("toggleIcon");
 
-    // CHECK IF REQUIRED ELEMENTS EXIST
     if (!form) {
         console.error("Register form not found!");
         return;
@@ -71,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // PASSWORD TOGGLE FUNCTIONALITY (ONLY IF ELEMENTS EXIST)
     if (passwordToggle && passwordInput && toggleIcon) {
         passwordToggle.addEventListener("click", function() {
             if (passwordInput.type === "password") {
@@ -87,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Password toggle attached");
     }
 
-    // ATTACH SUBMIT EVENT LISTENER
     form.addEventListener("submit", function (event) {
         console.log("Form submitted");
         event.preventDefault();
@@ -110,26 +106,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         console.log("Username:", username, "Email:", email, "Password length:", password.length);
 
-        // VALIDATION: CHECK IF FIELDS ARE EMPTY
         if (!username || !email || !password) {
             showError("Please complete all fields.");
             return false;
         }
 
-        // VALIDATION: CHECK USERNAME LENGTH
         if (username.length < 3) {
             showError("Username must be at least 3 characters long.");
             return false;
         }
 
-        // VALIDATION: CHECK EMAIL FORMAT
         var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
             showError("Please enter a valid email address.");
             return false;
         }
 
-        // VALIDATION: CHECK PASSWORD LENGTH
         if (password.length < 6) {
             showError("Password must be at least 6 characters long.");
             return false;
@@ -150,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
 
-        // SUCCESS: CREATE ACCOUNT
         users.push({
             username: username,
             email: email,
@@ -161,10 +152,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         console.log("Account created successfully");
         
-        // SHOW SUCCESS MESSAGE
         showSuccess("Account created successfully! Redirecting to login page...");
         
-        // REDIRECT TO LOGIN.HTML AFTER SHOWING SUCCESS MESSAGE
         setTimeout(function() {
             console.log("Redirecting to login.html");
             window.location.href = "login.html";

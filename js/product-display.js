@@ -10,7 +10,6 @@ function renderProducts(productsToRender, containerElement) {
         productHTML = "<p>No products found matching your criteria.</p>";
     } else {
         productsToRender.forEach(product => {
-            // ENSURE PRICE IS A NUMBER BEFORE CALLING toLocalString
             const price = typeof product.price === 'number' ? product.price : parseFloat(product.price);
 
             productHTML += `
@@ -18,7 +17,7 @@ function renderProducts(productsToRender, containerElement) {
                     <img src="${product.img}" alt="${product.name}">
                     <h3>${product.name}</h3>
                     <p>₱${price.toLocaleString()}</p>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <button type="button" class="add-to-cart">Add to Cart</button>
                 </div>
             `;
         });

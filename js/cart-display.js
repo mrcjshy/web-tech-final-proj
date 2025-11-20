@@ -9,9 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   function renderCart() {
-
-    // REMOVE EXISTING CART ITEMS
-
     const existingCartItems = document.querySelectorAll('.cart-item');
 
     existingCartItems.forEach(item => item.remove());
@@ -58,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div class="item-price">
 
-          <p>₱${item.price}</p>
+          <p>₱${item.price.toLocaleString()}</p>
 
         </div>
 
@@ -70,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div class="item-total">
 
-          <p>₱${item.price * item.quantity}</p>
+          <p>₱${(item.price * item.quantity).toLocaleString()}</p>
 
         </div>
 
@@ -117,17 +114,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   function updateTotalPrice() {
-
+    cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
     let totalPrice = 0;
 
     const selectedItems = document.querySelectorAll('.cart-item input[type="checkbox"]:checked');
 
     selectedItems.forEach(selectedItem => {
-
       const cartItem = selectedItem.closest('.cart-item');
-
-      const price = parseFloat(cartItem.querySelector('.item-price p').textContent.replace('₱', ''));
-
+      const itemIndex = parseInt(cartItem.querySelector('.item-quantity input').dataset.index);
+      const price = cart[itemIndex].price;
       const quantity = parseInt(cartItem.querySelector('.item-quantity input').value);
 
       totalPrice += price * quantity;
@@ -136,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (document.getElementById('total-price')) {
 
-      document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+      document.getElementById('total-price').textContent = totalPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
     }
 
